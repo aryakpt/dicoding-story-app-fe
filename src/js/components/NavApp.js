@@ -17,26 +17,26 @@ class NavApp extends LitWithoutShadowDom {
   }
   render() {
     return html`
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">${this.brandName}</a>
           <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasDarkNavbar"
-            aria-controls="offcanvasDarkNavbar"
+            data-bs-target="#offcanvaslightNavbar"
+            aria-controls="offcanvaslightNavbar"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div
-            class="offcanvas offcanvas-end text-bg-dark"
+            class="offcanvas offcanvas-end text-bg-light"
             tabindex="-1"
-            id="offcanvasDarkNavbar"
-            aria-labelledby="offcanvasDarkNavbarLabel"
+            id="offcanvaslightNavbar"
+            aria-labelledby="offcanvaslightNavbarLabel"
           >
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+              <h5 class="offcanvas-title" id="offcanvaslightNavbarLabel">
                 ${this.brandName}
               </h5>
               <button
