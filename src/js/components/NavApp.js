@@ -18,7 +18,7 @@ class NavApp extends LitWithoutShadowDom {
   render() {
     return html`
       <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <div class="container-fluid">
+        <div class="container">
           <a class="navbar-brand" href="#">${this.brandName}</a>
           <button
             class="navbar-toggler"

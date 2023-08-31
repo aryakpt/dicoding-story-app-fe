@@ -10,7 +10,7 @@ class NavLinks extends LitWithoutShadowDom {
     return html`
       <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
         <nav-link text="Home" href="/"></nav-link>
-        <nav-link text="Link" href="#"></nav-link>
+        <nav-link text="Add" href="/add.html"></nav-link>
       </ul>
     `;
   }
