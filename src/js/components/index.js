@@ -4,3 +4,4 @@ import "./NavLinks";
 import "./CardPost";
 import "./CardList";
 import "./ButtonLit";
+import "./FooterApp";
