@@ -1,0 +1,21 @@
+@use "./variables" as v;
+@mixin bounce-shadow {
+  box-shadow: 0 0px 12px 4px rgba(0, 0, 0, 0.05);
+  transition: v.$default-transition;
+  &:hover {
+    transform: scale(1.005);
+    box-shadow: 0 0px 10px 8px #00000033;
+  }
+}
+
+@mixin image-cover-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin flex-center($flex-dir: row) {
+  display: flex;
+  flex-direction: $flex-dir;
+  justify-content: center;
+  align-items: center;
+}
