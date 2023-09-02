@@ -5,3 +5,5 @@ import "./CardPost";
 import "./CardList";
 import "./ButtonLit";
 import "./FooterApp";
+import "./SpinnerComponent";
+import "./form/InputPassword";

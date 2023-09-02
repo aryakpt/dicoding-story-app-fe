@@ -6,6 +6,7 @@ const Register = {
     const registerForm = document.querySelector("#form-register");
     registerForm.addEventListener("submit", (e) => {
       e.preventDefault();
+      registerForm.classList.add("was-validated");
       this._handleSubmit();
     });
   },
@@ -13,9 +14,11 @@ const Register = {
     const payload = this._getPayload();
     const isValidated = this._validatePayload(payload);
     if (isValidated) {
+      const spinner = document.querySelector("spinner-component");
+      spinner.style.display = "block";
       const res = await authApi.register(payload);
+      spinner.style.display = "none";
       if (res.status === 201) {
-        alert(res.data.message);
         window.location.href = "/auth/login.html";
       } else {
         alert(res.data.message);

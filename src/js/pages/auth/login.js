@@ -8,6 +8,7 @@ const Login = {
     const loginForm = document.querySelector("#form-login");
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
+      loginForm.classList.add("was-validated");
       this._handleSubmit();
     });
   },
@@ -15,10 +16,12 @@ const Login = {
     const payload = this._getPayload();
     const isValidated = this._validatePayload(payload);
     if (isValidated) {
+      const spinner = document.querySelector("spinner-component");
+      spinner.style.display = "block";
       const res = await authApi.login(payload);
+      spinner.style.display = "none";
       if (res.status === 200) {
-        alert("Login Berhasil!");
-        storage.set(apiConfig.TOKEN_KEY, res.data.loginResult.token);
+        storage.set(apiConfig.TOKEN_KEY, res.data.loginResult);
         window.location.href = "/";
       } else {
         alert(res.data.message);
