@@ -2,7 +2,7 @@ import { LitElement, html, css } from "lit";
 
 class FooterApp extends LitElement {
   static styles = css`
-    footer {
+    :host {
       min-height: 60px;
       display: flex;
       justify-content: center;
@@ -13,7 +13,7 @@ class FooterApp extends LitElement {
   `;
 
   render() {
-    return html`<footer>Made With Love ❤ by Arya Krisna Putra</footer>`;
+    return html`<div>Made With Love ❤ by Arya Krisna Putra</div>`;
   }
 }
 
