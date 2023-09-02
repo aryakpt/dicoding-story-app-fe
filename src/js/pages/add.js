@@ -1,5 +1,7 @@
+import CheckUserAuth from "../utils/checkUserAuth";
 const Add = {
   init() {
+    CheckUserAuth.checkLoginState();
     const inputPhoto = document.querySelector("#validationCustomPhoto");
     inputPhoto.addEventListener("change", (e) => {
       this._updatePhotoPreview(inputPhoto.files[0]);

@@ -1,4 +1,4 @@
-import { formatDate } from "../utils";
+import { formatDate } from "../utils/helper";
 import LitWithoutShadowDom from "./base/LitWithoutShadowDom";
 import { html } from "lit";
 

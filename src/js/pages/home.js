@@ -1,5 +1,8 @@
+import CheckUserAuth from "../utils/checkUserAuth";
+
 const Home = {
   init: function () {
+    CheckUserAuth.checkLoginState();
     this._initialData();
   },
   async _initialData() {

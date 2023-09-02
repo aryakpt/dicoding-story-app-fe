@@ -2,9 +2,6 @@
 import "../sass/main.scss";
 import "./components";
 
-// Import javascript file as needed
-import * as bootstrap from "bootstrap";
-
 import routes from "./routes";
 
 const detectRoute = () => routes[window.location.pathname];
