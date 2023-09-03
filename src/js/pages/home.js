@@ -1,3 +1,4 @@
+import storyApi from "../api/story.api";
 import CheckUserAuth from "../utils/checkUserAuth";
 
 const Home = {
@@ -6,10 +7,16 @@ const Home = {
     this._initialData();
   },
   async _initialData() {
-    const fetchData = await fetch("/data/DATA.json");
-    const response = await fetchData.json();
-    this._stories = response;
-    this._populateDatatoCard(response.listStory);
+    const spinner = document.querySelector("spinner-component");
+    spinner.style.display = "block";
+    const res = await storyApi.getStories();
+    spinner.style.display = "none";
+    if (res.status === 200) {
+      this._stories = res.data.listStory;
+      this._populateDatatoCard(this._stories);
+    } else {
+      alert(res.data.message);
+    }
   },
   _populateDatatoCard: function (stories) {
     const cardListEl = document.querySelector("card-list");

@@ -1,3 +1,4 @@
+import storyApi from "../api/story.api";
 import CheckUserAuth from "../utils/checkUserAuth";
 const Add = {
   init() {
@@ -31,7 +32,7 @@ const Add = {
     reader.readAsDataURL(photo);
   },
 
-  _sendPost() {
+  async _sendPost() {
     const descInput = document.querySelector("#validationCustomDescription");
     const photoInput = document.querySelector("#validationCustomPhoto");
     const payload = {
@@ -40,8 +41,16 @@ const Add = {
     };
     const isValidated = this._validateForm({ ...payload });
     if (isValidated) {
-      console.log({ payload });
-      this._goToIndex();
+      const spinner = document.querySelector("spinner-component");
+      spinner.style.display = "block";
+      const res = await storyApi.createStory(payload);
+      spinner.style.display = "none";
+      if (res.status === 201) {
+        alert("Data berhasil dibuat!");
+        this._goToIndex();
+      } else {
+        alert(res.data.message);
+      }
     }
   },
 

@@ -30,7 +30,7 @@ class NavApp extends LitWithoutShadowDom {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div
-            class="offcanvas offcanvas-end text-bg-light"
+            class="offcanvas offcanvas-end text-bg-light d-flex justify-content-between"
             tabindex="-1"
             id="offcanvaslightNavbar"
             aria-labelledby="offcanvaslightNavbarLabel"

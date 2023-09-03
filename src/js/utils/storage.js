@@ -1,9 +1,9 @@
 const storage = {
   set(key, value) {
-    return sessionStorage.setItem(key, value);
+    return sessionStorage.setItem(key, JSON.stringify(value));
   },
   get(key) {
-    return sessionStorage.getItem(key);
+    return JSON.parse(sessionStorage.getItem(key));
   },
   destroy(key) {
     return sessionStorage.removeItem(key);

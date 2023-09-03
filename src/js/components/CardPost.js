@@ -26,7 +26,8 @@ class CardPost extends LitWithoutShadowDom {
     return html` <div class="card mb-3">
       <img
         src="${this.photoUrl ?? "..."}"
-        class="card-img-top"
+        class="card-img-top object-fit-cover"
+        style="max-height:200px; object-fit: cover;"
         alt="${this.name ?? "..."}"
       />
       <div class="card-body">

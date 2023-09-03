@@ -6,4 +6,5 @@ import "./CardList";
 import "./ButtonLit";
 import "./FooterApp";
 import "./SpinnerComponent";
+import "./JumbotronComponent";
 import "./form/InputPassword";
