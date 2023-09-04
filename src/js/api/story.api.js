@@ -1,19 +1,9 @@
-import apiConfig from "../config/apiConfig";
 import { storyAxios } from "../config/axiosInstance";
-import { storage } from "../utils/storage";
-
-const customOptions = {
-  headers: {
-    Authorization: `Bearer ${storage.get(apiConfig.TOKEN_KEY).token}`,
-  },
-};
 
 const storyApi = {
   async getStories() {
     try {
-      const res = await storyAxios.get("/stories", {
-        ...customOptions,
-      });
+      const res = await storyAxios.get("/stories");
       return res;
     } catch (error) {
       console.error(error);
@@ -24,7 +14,6 @@ const storyApi = {
     try {
       const res = await storyAxios.post("/stories", data, {
         headers: {
-          ...customOptions.headers,
           "Content-Type": "multipart/form-data",
         },
       });
